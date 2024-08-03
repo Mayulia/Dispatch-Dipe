@@ -1,0 +1,327 @@
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* Variáveis de estilo */
+:root {
+    --font-primary: 'Open Sans', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    --font-tertiary: 'Lora', serif;
+    --color-primary: #000;
+    --color-secondary: #333;
+    --color-background: #fff;
+    --color-light: #f0f0f0;
+    --color-dark: #666;
+    --color-accent: #007BFF;
+    --padding: 0.625rem; /* 10px */
+    --gap: 1.5rem; /* 24px */
+    --font-size-base: 1rem; /* 16px */
+    --font-size-lg: 1.2rem; /* 19.2px */
+    --font-size-sm: 0.8rem; /* 12.8px */
+    --border-radius: 12px;
+    --transition-duration: 0.3s;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --article-image-size: 120px;
+}
+
+/* Estilos globais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--padding) 1.25rem; /* 20px */
+    background-color: var(--color-background);
+}
+
+.logo img {
+    height: 4.225rem; /* 68px */
+}
+
+/* Menu de Navegação */
+nav.menu {
+    display: flex;
+    gap: var(--gap);
+    margin-top: var(--padding);
+}
+
+nav.menu a {
+    text-decoration: none;
+    font-family: var(--font-secondary);
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: var(--font-size-lg);
+}
+
+nav.menu a:hover {
+    background-color: var(--color-light);
+    transform: scale(1.1);
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    max-width: 100%;
+    height: 25rem; /* 400px */
+    margin: 0.1rem auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Navegação do Slider */
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.navigation div {
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 0 var(--padding);
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.5); /* 0 0 5px */
+}
+
+/* Seções */
+.sections {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--color-light);
+    border: #b9b9b9 1.5px solid;
+    justify-content: space-between;
+    margin: 0;
+    padding: 1%;
+}
+
+.section {
+    width: calc(33.333% - 1rem); /* 3 itens por linha com gap */
+    margin-bottom: 2rem;
+    text-align: center;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.section h2 {
+    margin-bottom: 1rem;
+    font-size: var(--font-size-lg);
+}
+
+.section img {
+    width: 100%;
+    height: 130px; /* Ajuste a altura conforme necessário */
+    object-fit: cover;
+    margin: 1.5rem 1%;
+    object-position: center;
+}
+
+.section p {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 48rem) { /* 768px */
+    nav.menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav.menu a {
+        margin-bottom: var(--padding);
+    }
+
+    .navigation div {
+        font-size: 1rem;
+    }
+
+    .slider {
+        height: 18.75rem; /* 300px */
+    }
+
+    .section {
+        width: 100%;
+    }
+}
+
+/* Remover a barra de rolagem */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-light);
+    border: #b9b9b9 1.5px solid;
+}
+
+.social-media {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.social-media li {
+    margin: 0 10px;
+}
+
+.social-media a {
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+}
+
+.copyright {
+    font-size: 0.875rem;
+    color: var(--color-dark);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 0;
+}
+
+/* Botão back-to-top */
+.back-to-top {
+    position: fixed;
+    bottom: 1.25rem; /* 20px */
+    right: 1.25rem; /* 20px */
+    display: inline-block;
+    padding: 0.5rem; /* 8px */
+    background-color: var(--color-background);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    text-align: center;
+    line-height: 1;
+    z-index: 1000;
+    transition: background-color var(--transition-duration), transform var(--transition-duration);
+}
+
+.back-to-top:hover {
+    background-color: var(--color-light);
+    transform: scale(1.1);
+}
+
+/* Container de Notícias */
+.news-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: var(--color-dark) 1.5px solid;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+}
+
+.news-container:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.news-header {
+    grid-column: span 2; /* Ocupa ambas as colunas */
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222;
+    background: rgba(94, 94, 94, 0.103);
+    font-family: var(--font-secondary);
+}
+
+.news-article {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    background: var(--color-light);
+    transition: background-color var(--transition-duration) ease;
+}
+
+.news-article:hover {
+    background-color: #f0f0f0;
+}
+
+.article-image {
+    flex: 0 0 var(--article-image-size);
+    width: var(--article-image-size);
+    height: var(--article-image-size);
+    margin-right: 20px;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-duration) ease;
+}
+
+.news-article:hover .article-image img {
+    transform: scale(1.05);
+}
+
+.article-content {
+    flex: 1;
+}
+
+.article-title {
+    font-size: 20px;
+    color: var(--color-secondary);
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-tertiary);
+    transition: color var(--transition-duration) ease;
+}
+
+.news-article:hover .article-title {
+    color: var(--color-accent);
+}
+
+.article-timestamp {
+    color: #888;
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: var(--font-primary);
+}
